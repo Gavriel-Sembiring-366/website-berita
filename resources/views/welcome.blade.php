@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,18 @@
     <title></title>
 </head>
 <body>
-    Login Page
+    @foreach ($berita as $news)
+    <h1> {{ $news ['judul_berita']}} </h1>
+    <h1> {{ $news ['jenis_berita']}} </h1>
+    <h1> {{ $news ['judul1']}} </h1>
+    <h1> {{ $news ['isi1']}} </h1>
+    <h1> {{ $news ['judul2']}} </h1>
+    <h1> {{ $news ['isi2']}} </h1>
+    <h1> {{ $news ['judul3']}} </h1>
+    <h1> {{ $news ['isi3']}} </h1>
+        <hr>
+    @endforeach
+
+    
 </body>
 </html>
