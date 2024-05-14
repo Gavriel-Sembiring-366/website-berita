@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form with 8 Resizable Text Fields</title>
+    <title>Input Data Form</title>
     <style>
         .form-group {
             margin-bottom: 20px;
@@ -27,54 +27,65 @@
             box-sizing: border-box;
         }
         textarea {
-            resize: both;
-            overflow: auto;
+            resize: both; /* Allows both horizontal and vertical resizing */
+            overflow: auto; /* Adds scrollbars when needed */
+            max-width: 100%; /* Constrains resizing to fit within the parent container */
         }
-        #textfield1 {
+        #judul_berita {
             resize: none;
         }
     </style>
 </head>
 <body>
-    <form>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="textfield1">Text Field 1</label>
-                <input type="text" id="textfield1" name="textfield1">
-            </div>
-            <div class="form-group">
-                <label for="combobox2">Combobox 2</label>
-                <select id="combobox2" name="combobox2">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-            </div>
-        </div>
+    <form method="POST" action="{{ route('news.store') }}">
+        <!-- CSRF Token -->
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         <div class="form-group">
-            <label for="textfield3">Text Field 3</label>
-            <textarea id="textfield3" name="textfield3" rows="3"></textarea>
+            <label for="judul_berita">Judul Berita</label>
+            <input type="text" id="judul_berita" name="judul_berita">
         </div>
+        
         <div class="form-group">
-            <label for="textfield4">Text Field 4</label>
-            <textarea id="textfield4" name="textfield4" rows="3"></textarea>
+            <label for="jenis_berita">Jenis Berita</label>
+            <select id="jenis_berita" name="jenis_berita">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
         </div>
+
         <div class="form-group">
-            <label for="textfield5">Text Field 5</label>
-            <textarea id="textfield5" name="textfield5" rows="3"></textarea>
+            <label for="judul1">Judul 1</label>
+            <input type="text" id="judul1" name="judul1">
         </div>
+
         <div class="form-group">
-            <label for="textfield6">Text Field 6</label>
-            <textarea id="textfield6" name="textfield6" rows="3"></textarea>
+            <label for="isi1">Isi 1</label>
+            <textarea id="isi1" name="isi1" rows="3"></textarea>
         </div>
+
         <div class="form-group">
-            <label for="textfield7">Text Field 7</label>
-            <textarea id="textfield7" name="textfield7" rows="3"></textarea>
+            <label for="judul2">Judul 2</label>
+            <input type="text" id="judul2" name="judul2">
         </div>
+
         <div class="form-group">
-            <label for="textfield8">Text Field 8</label>
-            <textarea id="textfield8" name="textfield8" rows="3"></textarea>
+            <label for="isi2">Isi 2</label>
+            <textarea id="isi2" name="isi2" rows="3"></textarea>
         </div>
+
+        <div class="form-group">
+            <label for="judul3">Judul 3</label>
+            <input type="text" id="judul3" name="judul3">
+        </div>
+
+        <div class="form-group">
+            <label for="isi3">Isi 3</label>
+            <textarea id="isi3" name="isi3" rows="3"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+Use App\Models\berita;
 use Illuminate\Http\Request;
 
-class HeadlineController extends Controller
+class EditorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,20 @@ class HeadlineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'judul_berita'  => 'required',
+            'jenis_berita'  => 'required',
+            'judul1'        => 'required',
+            'isi1'          => 'required',
+            'judul2'        => 'nullable',
+            'isi2'          => 'nullable',
+            'judul3'        => 'nullable',
+            'isi3'          => 'nullable',
+        ]);
+
+        $berita = Berita::create($validated);
+
+        return view('editor');
     }
 
     /**
@@ -58,6 +71,6 @@ class HeadlineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return berita::destroy($id);
     }
 }
