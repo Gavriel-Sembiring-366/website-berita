@@ -27,6 +27,18 @@ class WelcomeController extends Controller
 
     public function store(Request $request)
     {
+        // berita minimal 1 paragraf saja.
+        $request->validate([
+            'judul_berita'  => 'required',
+            'jenis_berita' => 'required',
+            'judul1' => 'required',
+            'isi1' => 'required',
+            'judul2',
+            'isi2', 
+            'judul3',
+            'isi3',
+        ]);
+
         return berita::create($request->all());
     }
 
