@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-Use App\Models\berita;
-use Illuminate\Http\Request;
 
-class EditorController extends Controller
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Validator;
+
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,7 @@ class EditorController extends Controller
      */
     public function index()
     {
-        return view('editor');
+        return view('login');
     }
 
     /**
@@ -24,20 +28,22 @@ class EditorController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'judul_berita'  => 'required',
-            'jenis_berita'  => 'required',
-            'judul1'        => 'required',
-            'isi1'          => 'required',
-            'judul2'        => 'nullable',
-            'isi2'          => 'nullable',
-            'judul3'        => 'nullable',
-            'isi3'          => 'nullable',
-        ]);
+        $credentials = $request->only('email', 'password');
 
-        $berita = Berita::create($validated);
+        if (!Auth::attempt($credentials)) {
+            return response()->json(['message' => 'Invalid credentials'], 401);
+        } 
 
-        return view('editor');
+        $user = Auth::user();
+        $token = $user->createToken('authToken')->plainTextToken;
+
+        if ($request->expectsJson()) {
+            return response()->json(['token' => $token]);
+        } else {
+            session(['auth_token' => $token]);
+            return redirect()->route('headline.show');
+        }
+    
     }
 
     /**
@@ -71,6 +77,6 @@ class EditorController extends Controller
      */
     public function destroy($id)
     {
-        return berita::destroy($id);
-    }
+        //
+    } 
 }

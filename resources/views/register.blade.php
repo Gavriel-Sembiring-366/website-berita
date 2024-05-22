@@ -90,17 +90,25 @@
 <body>
   <div class="login-form">
     <h1>Login</h1>
-    <form method="POST" action="{{ route('login.run') }}" >
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
-    </form>
-    <div class="links">
-      <a href="#">Forgot Password?</a>
-    </div>
+    <form method="POST" action="{{ route('register.run') }}">
+      
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+  
+      <label for="password_confirmation">Confirm Password:</label>
+      <input type="password" id="password_confirmation" name="password_confirmation" required>
+  
+      <button type="submit">Register</button>
+  </form>
+  
   </div>
 </body>
 </html>
