@@ -263,6 +263,21 @@
     
             form.submit(); 
         }
+
+        function submitForm(action) {
+            const form = document.getElementById('editor-form');
+            const methodInput = document.getElementById('form-method');
+    
+            if (action === 'post') {
+                form.action = "{{ route('edit.update', ['id' => $selectedNews->id]) }}";
+                methodInput.value = 'POST';
+            } else if (action === 'delete') {
+                form.action = "{{ route('edit.delete', ['id' => $selectedNews->id]) }}";
+                methodInput.value = 'DELETE';
+            }
+    
+            form.submit(); 
+        }
     </script>
 </body>
 </html>

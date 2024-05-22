@@ -43,19 +43,10 @@
                   <h1>Web Berita</h1>
                   <!-- PLACE for date -->
                 </ul>
-                <ul class="navbar-right">
+                <ul class="navbar-right" style="gap: 20px">
                   <li>Login</li>
                   <li>Register</li>
                 </ul>
-                <div>
-                  <a
-                    class="navbar-brand"
-                    href=""
-                    ><img src="{{ url('/images/logo.svg ') }}" alt=""
-                  /></a>
-                </div>
-                <div class="d-flex">
-                </div>
               </div>
               <div class="navbar-bottom-menu">
                 <button

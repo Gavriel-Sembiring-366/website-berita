@@ -18,6 +18,11 @@ class WelcomeController extends Controller
     {
         return berita::all();
     }
+
+    public function test()
+    {
+        return view('test');
+    }
  
     public function show($id)
     {

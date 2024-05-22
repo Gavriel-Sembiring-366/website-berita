@@ -28,24 +28,28 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-
-        if (!Auth::attempt($credentials)) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
-        } 
-
-        $user = Auth::user();
-        $token = $user->createToken('authToken')->plainTextToken;
-
-        if ($request->expectsJson()) {
-            return response()->json(['token' => $token]);
-        } else {
-            session(['auth_token' => $token]);
-            return redirect()->route('headline.show');
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required|password',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
         }
     
+        $credentials = $request->only('email', 'password');
+    
+        // Attempt to authenticate the user
+        if (!Auth::attempt($credentials)) {
+            return response()->json(['message' => 'Invalid credentials'], 401);
+        }
+    
+        $user = Auth::user();
+        $token = $user->createToken('authToken')->plainTextToken;
+    
+        return response()->json(['token' => $token]);
     }
-
     /**
      * Display the specified resource.
      *

@@ -11,9 +11,14 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
+//TEST ONLY
+Route::get('/test', [WelcomeController::class, 'test'])->name('test.show');  
+
 
 //welcome page route
 Route::get('/', [WelcomeController::class, 'welcome'])->name('headline.show');  
+
+
 
 // Route for di
 Route::resource('berita', WelcomeController::class);
@@ -33,7 +38,7 @@ Route::get('register', [RegisterController::class, 'index'])->name('register.sho
 Route::post('register', [RegisterController::class, 'store'])->name('register.run');
 
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::group(['middleware'=> ['auth:sanctum']], function(){
     //Route for create news
     Route::get('create', [CreateController::class, 'index'])->name('create.show');
     Route::post('create', [CreateController::class, 'store'])->name('create.store');
@@ -47,8 +52,24 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('search', [SearchController::class, 'index'])->name('search.show');
     Route::post('search', [SearchController::class, 'store'])->name('search.run');
 });
+
+
+// Route::middleware('auth:sanctum')->group(function () {
+//     //Route for create news
+//     Route::get('create', [CreateController::class, 'index'])->name('create.show');
+//     Route::post('create', [CreateController::class, 'store'])->name('create.store');
+
+//     //Route for edit page
+//     Route::get('edit/{id}', [EditController::class, 'show'])->name('edit.show');
+//     Route::post('edit/{id}', [EditController::class, 'update'])->name('edit.update');
+//     Route::delete('edit/{id}', [EditController::class, 'destroy'])->name('edit.delete');
+
+//     //route for editing picked article
+//     Route::get('search', [SearchController::class, 'index'])->name('search.show');
+//     Route::post('search', [SearchController::class, 'store'])->name('search.run');
+// });
  
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function () {
     return $request->user();
 });
 
