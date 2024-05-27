@@ -9,36 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-            
-        }
-        .links{
-            margin-left: 20%
-        }
-        .navbar .title {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 20px 20px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .navbar a{
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 20px 16px;
-            text-decoration: none;
-            margin-left: 20px; 
-        }
-        .navbar a:hover{
-            background-color: #ddd;
-            color: black;
-        }
+        } 
 
         .slider-container {
             display: flex;
@@ -173,22 +144,16 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="title">Buat Berita Anda!</div>
-        <div class="links">
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>      
-        </div>
-    </div>
 
+    @include('components.footer')
+    @include('components.user-navbar')
     <div class="slider-container">
         <div class="slider">
             <input type="radio" name="slider" id="create" checked>
-            <input type="radio" name="slider" id="edit" onclick="location.href='{{ route('search.show') }}'">
+            <input type="radio" name="slider" id="edit" onclick="location.href='{{ route('dashboard.show') }}'">
             <div class="slider-button"></div>
             <label for="create" class="slider-option">Create</label>
-            <label for="edit" class="slider-option">Edit</label>
+            <label for="edit" class="slider-option">Dashboard</label>
         </div>
     </div>
 
@@ -244,5 +209,7 @@
 
         <button id="submit" type="submit">Submit</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url('/js/auth.js') }}"></script>
 </body>
 </html>

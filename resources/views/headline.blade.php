@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="https://demo.bootstrapdash.com/world-vision/assets/images/favicon.png"
     />
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ url('/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url('/css/headline.css') }}" />
     <!-- endinject -->
   </head>
 
@@ -28,138 +28,22 @@
   >
     <div class="container-scroller">
       <div class="main-panel">
-        <header id="header">
-          <div class="container">
-            <!-- partial:partials/_navbar.html -->
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <div
-                class="d-flex justify-content-between align-items-center navbar-top"
-              >
-                <ul class="navbar-left">
-                  <li>Wed, March 4, 2020</li>
-                  <!-- PLACE for date -->
-                </ul>
-                <ul class="center">
-                  <h1>Web Berita</h1>
-                  <!-- PLACE for date -->
-                </ul>
-                <ul class="navbar-right" style="gap: 20px">
-                  <li>Login</li>
-                  <li>Register</li>
-                </ul>
-              </div>
-              <div class="navbar-bottom-menu">
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div
-                  class="navbar-collapse justify-content-center collapse"
-                  id="navbarSupportedContent"
-                >
-                  <ul
-                    class="navbar-nav d-lg-flex justify-content-between align-items-center"
-                  >
-                    <li>
-                      <button class="navbar-close">
-                        <i class="mdi mdi-close"></i>
-                      </button>
-                    </li>
-                    <li class="nav-item active">
-                      <a
-                        class="nav-link active"
-                        href="https://demo.bootstrapdash.com/world-vision/index.html"
-                        >Home</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/world.html"
-                        >World</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/author.html"
-                        >Magazine</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/news-post.html"
-                        >Blog</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/business.html"
-                        >Business</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/sports.html"
-                        >Sports</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/art.html"
-                        >Art</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/politics.html"
-                        >Politics</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/real-estate.html"
-                        >Real estate</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link"
-                        href="https://demo.bootstrapdash.com/world-vision/pages/travel.html"
-                        >Travel</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-
-            <!-- partial -->
-          </div>
-        </header>
+        @include('components.guest-navbar')
         <div class="container">
           <div class="banner-top-thumb-wrap">
             <div class="row">
+            
+            
+              <div class="d-flex position-relative float-center">
+                <h3 class="section-title">Headline</h3>
+              </div>
               <div class="col-lg-12">
+                
                 <div
                   class="owl-carousel owl-theme owl-loaded owl-drag"
                   id="main-banner-carousel"
                 >
+
                   <div class="owl-stage-outer">
                     <div
                       class="owl-stage"
@@ -174,7 +58,7 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
+                                {{ $recent1->judul_berita }}
                               </h1>
                               <h5 class="font-weight-normal m-0">
                                 Lorem Ipsum has been the industry's standard
@@ -182,10 +66,6 @@
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
@@ -202,15 +82,11 @@
                                 If you wanted to get rich, how would you do it?
                               </h1>
                               <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
+                                {{ $recent2->judul_berita }}
                               </h5>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
@@ -230,15 +106,11 @@
                                 If you wanted to get rich, how would you do it?
                               </h1>
                               <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
+                                {{ $recent3->judul_berita }}
                               </h5>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
@@ -255,7 +127,7 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
+                                {{ $recent4->judul_berita }}
                               </h1>
                               <h5 class="font-weight-normal m-0">
                                 Lorem Ipsum has been the industry's standard
@@ -263,10 +135,6 @@
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
-                                <span class="fs-10 mr-1">2 hours ago</span>
-                                <i class="mdi mdi-bookmark-outline mr-3"></i>
-                                <span class="fs-10 mr-1">126</span>
-                                <i class="mdi mdi-comment-outline"></i>
                               </p>
                             </div>
                             <div class="carousel-image">
@@ -304,7 +172,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <div class="d-flex position-relative float-left">
-                  <h3 class="section-title">World News</h3>
+                  <h3 class="section-title">International</h3>
                 </div>
               </div>
             </div>
@@ -316,7 +184,7 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">TRAVEL</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
                   Refugees flood Turkey's border with Greece
@@ -337,7 +205,7 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">NEWS</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
                   South Korea’s Moon Jae-in sworn in vowing address
@@ -358,7 +226,7 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">ART</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
                   These puppies are training to assist in avalanche rescue
@@ -379,7 +247,7 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">BUSINESS</span>
+                  <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
                   'Love Is Blind' couple opens up about their first year
@@ -399,7 +267,7 @@
             <div class="row">
               <div class="col-lg-3">
                 <div class="d-flex position-relative float-left">
-                  <h3 class="section-title">Popular News</h3>
+                  <h3 class="section-title">Sport News</h3>
                 </div>
               </div>
             </div>
@@ -411,7 +279,7 @@
                     class="img-fluid"
                     alt="world-news"
                   />
-                  <span class="thumb-title">NEWS</span>
+                  <span class="thumb-title">SPORT</span>
                 </div>
                 <h1 class="font-weight-600 mt-3">
                   Melania Trump speaks about courage at State Department
@@ -431,7 +299,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">POLITICS</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       A look at California's eerie plane graveyards
@@ -447,7 +315,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">TRAVEL</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       The world's most beautiful racecourses
@@ -465,7 +333,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">POLITICS</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       Japan cancels cherry blossom festivals over virus fears
@@ -481,7 +349,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">TRAVEL</span>
+                      <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       Classic cars reborn as electric vehicles
@@ -498,7 +366,7 @@
             <div class="row">
               <div class="col-lg-3">
                 <div class="d-flex position-relative float-left">
-                  <h3 class="section-title">Editor choice</h3>
+                  <h3 class="section-title">Other news</h3>
                 </div>
               </div>
             </div>
@@ -512,7 +380,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">LIFESTYLE</span>
+                      <span class="thumb-title">NEWS</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       The island country that gave Mayor Pete his name
@@ -525,7 +393,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">SPORTS</span>
+                      <span class="thumb-title">NEWS</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       Disney parks expand (good) vegan food options
@@ -538,7 +406,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">INTERNET</span>
+                      <span class="thumb-title">NEWS</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       A hot springs where clothing is optional after dark
@@ -579,7 +447,7 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">TOURISM</span>
+                      <span class="thumb-title">NEWS</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
                       From Pakistan to the Caribbean: Curry's journey
@@ -599,52 +467,36 @@
                   <div class="col-sm-12">
                     <div class="border-bottom pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                        {{ $recent1->judul_berita }}
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
                       </p>
                     </div>
                   </div>
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                        {{ $recent2->judul_berita }}
                       </h5>
-                      <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
+                      <p class="text-color m-0 d-flex align-items-center">                        
                       </p>
                     </div>
                   </div>
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                        {{ $recent3->judul_berita }}
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
                       </p>
                     </div>
                   </div>
                   <div class="col-sm-12">
                     <div class="pt-4">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        South Korea’s Moon Jae-in sworn in vowing address
+                        {{ $recent4->judul_berita }}
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
-                        <span class="fs-10 mr-1">2 hours ago</span>
-                        <i class="mdi mdi-bookmark-outline mr-3"></i>
-                        <span class="fs-10 mr-1">126</span>
-                        <i class="mdi mdi-comment-outline"></i>
                       </p>
                     </div>
                   </div>
@@ -659,189 +511,6 @@
         <!-- partial:partials/_footer.html -->
         <footer>
           <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="border-top"></div>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/news-post.html"
-                      >News</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/index.html"
-                      >Home</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/world.html"
-                      >World</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/author.html"
-                      >Magazine</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/business.html"
-                      >Business</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/politics.html"
-                      >Politics</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/world.html"
-                      >World</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/sports.html"
-                      >Sports</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/art.html"
-                      >Art</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Magazine</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/real-estate.html"
-                      >Real estate</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/travel.html"
-                      >Travel</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/author.html"
-                      >Author</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href=""
-                      >Features</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Photography</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Video</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/news-post.html"
-                      >Newsletters</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Live Events</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Stores</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Jobs</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-3 col-lg-3">
-                <ul class="footer-vertical-nav">
-                  <li class="menu-title">
-                    <a
-                      href=""
-                      >More</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >RSS</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >FAQ</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >User Agreement</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      >Privacy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/aboutus.html"
-                      >About us</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://demo.bootstrapdash.com/world-vision/pages/contactus.html"
-                      >Contact</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div class="row">
               <div class="col-sm-12">
                 <div class="d-flex justify-content-between">
