@@ -60,9 +60,6 @@
                               <h1 class="font-weight-bold">
                                 {{ $recent1->judul_berita }}
                               </h1>
-                              <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
-                              </h5>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
@@ -79,11 +76,8 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
-                              </h1>
-                              <h5 class="font-weight-normal m-0">
                                 {{ $recent2->judul_berita }}
-                              </h5>
+                              </h1>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
@@ -105,9 +99,6 @@
                               <h1 class="font-weight-bold">
                                 If you wanted to get rich, how would you do it?
                               </h1>
-                              <h5 class="font-weight-normal m-0">
-                                {{ $recent3->judul_berita }}
-                              </h5>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
@@ -129,10 +120,7 @@
                               <h1 class="font-weight-bold">
                                 {{ $recent4->judul_berita }}
                               </h1>
-                              <h5 class="font-weight-normal m-0">
-                                Lorem Ipsum has been the industry's standard
-                              </h5>
-                              <p
+                                <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
                               >
                               </p>
