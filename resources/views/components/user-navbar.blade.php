@@ -5,7 +5,7 @@
 <header style="background-color: rgb(29, 11, 103)">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
-        <a href="#">
+        <a href="{{ route('headline.show') }}">
           <h1 class="text-xl font-semibold text-gray-300">Website Berita</h1>
         </a>
       </div>
@@ -22,12 +22,12 @@
           <button id="collapseButton" type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-300" aria-expanded="false">
           </button>
         </div>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-300">Headline</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-300">International</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-300">Sports</a>
+        <a href="{{ url('/#latest') }} " class=" text-sm font-semibold leading-6 text-gray-300">Latest News</a>
+        <a href="{{ url('/#International') }}" class="text-sm font-semibold leading-6 text-gray-300">International</a>
+        <a href="{{ url('/#sport') }}" class="text-sm font-semibold leading-6 text-gray-300">Sports</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-300">Dashboard<span aria-hidden="true">&rarr;</span></a>
+        <a href="{{ route('dashboard.show') }}" class="text-sm font-semibold leading-6 text-gray-300">Dashboard<span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -50,12 +50,12 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
 
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Headline</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">International</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Sports</a>
+              <a href="{{ url('/#latest') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Latest News</a>
+              <a href="{{ url('/#International') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">International</a>
+              <a href="{{ url('/#sport') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Sports</a>
             </div>
             <div class="py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Dashboard</a>
+              <a href="{{ route('dashboard.show') }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Dashboard</a>
             </div>
           </div>
         </div>

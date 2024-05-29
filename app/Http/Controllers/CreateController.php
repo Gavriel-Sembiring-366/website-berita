@@ -26,6 +26,22 @@ class CreateController extends Controller
      */
     public function store(Request $request)
     {
+        $judul_berita = $request->judul_berita;
+        $jenis_berita = $request->jenis_berita;
+        $judul1 = $request->judul1;
+        $isi1 = $request->isi1;
+        $user_id = $request->user_id;
+
+        if (empty($judul_berita)) {return response()->json(['error' => '"judul_berita" harus diisi.'], 422);}
+        
+        if (empty($jenis_berita)) {return response()->json(['error' => '"jenis_berita" harus diisi.'], 422);}
+        
+        if (empty($judul1)) {return response()->json(['error' => '"judul1" harus diisi.'], 422);}
+        
+        if (empty($isi1)) {return response()->json(['error' => '"isi1" harus diisi.'], 422);}
+        
+        if (empty($user_id)) {return response()->json(['error' => '"user_id" harus diisi.'], 422);}
+
         $validated = $request->validate([
             'judul_berita'  => 'required',
             'jenis_berita'  => 'required',
@@ -35,11 +51,12 @@ class CreateController extends Controller
             'isi2'          => 'nullable',
             'judul3'        => 'nullable',
             'isi3'          => 'nullable',
+            'user_id'       => 'required',
         ]); 
 
         $berita = Berita::create($validated);
-
-        return redirect()->route('create.show');
+        return response()->json(['message' => "Berita Sudah Ditambahkan!"]);
+        // return redirect()->route('create.show');
     }
 
     /**

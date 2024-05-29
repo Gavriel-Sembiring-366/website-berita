@@ -32,9 +32,7 @@
         <div class="container">
           <div class="banner-top-thumb-wrap">
             <div class="row">
-            
-            
-              <div class="d-flex position-relative float-center">
+              <div id="latest" class="d-flex position-relative float-center">
                 <h3 class="section-title">Headline</h3>
               </div>
               <div class="col-lg-12">
@@ -58,7 +56,7 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                {{ $recent1->judul_berita }}
+                                <a href="{{ route('news.show', ['id' => $recent1->id]) }}">{{ $recent1->judul_berita }}</a>
                               </h1>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
@@ -66,7 +64,8 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img src="{{ url('/images/banner.jpg ') }}" alt="" />
+                              <a href="{{ route('news.show', ['id' => $recent1->id]) }}"><img src="{{ url('/images/banner.jpg ') }}" alt="" /></a>
+                              
                             </div>
                           </div>
                         </div>
@@ -76,7 +75,7 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                {{ $recent2->judul_berita }}
+                                <a href="{{ route('news.show', ['id' => $recent2->id]) }}">{{ $recent2->judul_berita }}</a>
                               </h1>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
@@ -84,10 +83,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img
-                                src="{{ url('/images/banner_1.jpg ') }}"
-                                alt=""
-                              />
+                              <a href="{{ route('news.show', ['id' => $recent2->id]) }}"><img src="{{ url('/images/banner_1.jpg ') }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -97,7 +93,7 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                If you wanted to get rich, how would you do it?
+                                <a href="{{ route('news.show', ['id' => $recent3->id]) }}">{{ $recent3->judul_berita }}</a>
                               </h1>
                               <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
@@ -105,10 +101,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img
-                                src="{{ url('/images/banner_2.jpg ') }}"
-                                alt=""
-                              />
+                              <a href="{{ route('news.show', ['id' => $recent3->id]) }}"><img src="{{ url('/images/banner_2.jpg ') }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -118,7 +111,7 @@
                           <div class="carousel-content-wrapper mb-2">
                             <div class="carousel-content">
                               <h1 class="font-weight-bold">
-                                {{ $recent4->judul_berita }}
+                                <a href="{{ route('news.show', ['id' => $recent4->id]) }}">{{ $recent4->judul_berita }}</a>
                               </h1>
                                 <p
                                 class="text-color m-0 pt-2 d-flex align-items-center"
@@ -126,10 +119,7 @@
                               </p>
                             </div>
                             <div class="carousel-image">
-                              <img
-                                src="{{ url('/images/banner_3.jpg ') }}"
-                                alt=""
-                              />
+                              <a href="{{ route('news.show', ['id' => $recent4->id]) }}"><img src="{{ url('/images/banner_3.jpg ') }}" alt="" /></a>
                             </div>
                           </div>
                         </div>
@@ -159,8 +149,8 @@
           <div class="world-news">
             <div class="row">
               <div class="col-sm-12">
-                <div class="d-flex position-relative float-left">
-                  <h3 class="section-title">International</h3>
+                <div id="International" class="d-flex position-relative float-left">
+                  <h3 id = "International"class="section-title">International</h3>
                 </div>
               </div>
             </div>
@@ -254,7 +244,7 @@
           <div class="editors-news">
             <div class="row">
               <div class="col-lg-3">
-                <div class="d-flex position-relative float-left">
+                <div id="sport" class="d-flex position-relative float-left">
                   <h3 class="section-title">Sport News</h3>
                 </div>
               </div>
@@ -454,8 +444,8 @@
                   </div>
                   <div class="col-sm-12">
                     <div class="border-bottom pb-3">
-                      <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent1->judul_berita }}
+                      <h5  class="font-weight-600 mt-0 mb-0">
+                        <a href="{{ route('news.show', ['id' => $recent1->id]) }}">{{ $recent1->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
                       </p>
@@ -464,7 +454,7 @@
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent2->judul_berita }}
+                        <a href="{{ route('news.show', ['id' => $recent2->id]) }}">{{ $recent2->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">                        
                       </p>
@@ -473,7 +463,7 @@
                   <div class="col-sm-12">
                     <div class="border-bottom pt-4 pb-3">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent3->judul_berita }}
+                        <a href="{{ route('news.show', ['id' => $recent3->id]) }}">{{ $recent3->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
                       </p>
@@ -482,7 +472,7 @@
                   <div class="col-sm-12">
                     <div class="pt-4">
                       <h5 class="font-weight-600 mt-0 mb-0">
-                        {{ $recent4->judul_berita }}
+                        <a href="{{ route('news.show', ['id' => $recent4->id]) }}">{{ $recent4->judul_berita }}</a>
                       </h5>
                       <p class="text-color m-0 d-flex align-items-center">
                       </p>

@@ -61,6 +61,7 @@ class EditController extends Controller
             'isi2'          => 'nullable',
             'judul3'        => 'nullable',
             'isi3'          => 'nullable',
+            'status'        => 'required',
         ]);
 
         $beritaDipilih = berita::findOrFail($id);  

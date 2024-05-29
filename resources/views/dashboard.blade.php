@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor Berita</title>
     
-    @vite('public/css/dashboard.css')
+    @vite('public/css/dashboard.css') 
     @vite('public/css/tailwind.css')
     {{--  --}}
 </head>
@@ -51,7 +51,7 @@
         </tr>
       </thead>
       @foreach ($news as $new)
-        <tbody class="bg-white divide-y divide-gray-200">
+        <tbody class="bg-white divide-y divide-gray-200" penulis="{{ $new->user_id }}" status="{{ $new->status }}">
           <tr class="hover:bg-gray-100">
             <td class="px-6 py-4 whitespace-normal">
               <div class="flex items-center">
@@ -74,6 +74,7 @@
             <td class="px-6 py-4 text-right whitespace-nowrap">
               <a href="{{ route('edit.show', ['id' => $new->id]) }}" class="text-indigo-600 hover:text-indigo-900"> Edit </a>
             </td>
+            
           </tr>
         </tbody>
       @endforeach
@@ -85,6 +86,7 @@
   
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="{{ url('/js/auth.js') }}"></script>
+  <script src="{{ url('/js/dashboard.js') }}"></script>
 
 </body>
 

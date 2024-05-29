@@ -31,11 +31,12 @@
 
             <div class="form-group" id="jenis">
                 <label for="jenis_berita">Jenis Berita</label>
-                <select id="jenis_berita" name="jenis_berita">
-                    @foreach ($types as $type)
-                    <option value="{{ $type->jenis_berita }}">{{ $type->jenis_berita }}</option>
-                    @endforeach
-                </select>
+                    <select id="jenis_berita" name="jenis_berita">
+                        @foreach ($types as $type)
+                        <option value="{{ $type->jenis_berita }}" 
+                            {{ $type->jenis_berita === $selectedNews->jenis_berita ? 'selected' : '' }}>{{ $type->jenis_berita }}</option>
+                        @endforeach
+                    </select>
             </div>
         </div>
 
@@ -69,6 +70,15 @@
             <textarea id="isi3" name="isi3" rows="3" >{{ $selectedNews->isi3 ?? '' }}</textarea>
         </div>
 
+
+        <div class="form-group" id="status-group">
+            <label for="status">Jenis Berita</label>
+            <select id="status" name="status">
+                <option value="reject">Reject</option>
+                <option value="accept">Accept</option>
+            </select>
+        </div>
+
         <div id="buttons">
             <button id="post" type="button" onclick="submitForm('post')">Post</button>
             <button id="delete" type="button" onclick="submitForm('delete')">Delete</button>            
@@ -80,7 +90,6 @@
         function submitForm(action) {
             const form = document.getElementById('editor-form');
             const methodInput = document.getElementById('form-method');
-    
             if (action === 'post') {
                 form.action = "{{ route('edit.update', ['id' => $selectedNews->id]) }}";
                 methodInput.value = 'POST';
@@ -88,26 +97,13 @@
                 form.action = "{{ route('edit.delete', ['id' => $selectedNews->id]) }}";
                 methodInput.value = 'DELETE';
             }
-    
             form.submit(); 
         }
 
-        function submitForm(action) {
-            const form = document.getElementById('editor-form');
-            const methodInput = document.getElementById('form-method');
-    
-            if (action === 'post') {
-                form.action = "{{ route('edit.update', ['id' => $selectedNews->id]) }}";
-                methodInput.value = 'POST';
-            } else if (action === 'delete') {
-                form.action = "{{ route('edit.delete', ['id' => $selectedNews->id]) }}";
-                methodInput.value = 'DELETE';
-            }
-    
-            form.submit(); 
-        }
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="{{ url('/js/auth.js') }}"></script>
+    <script src="{{ url('/js/edit.js') }}"></script>
 </body>
 </html>

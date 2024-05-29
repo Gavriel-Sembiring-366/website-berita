@@ -32,10 +32,13 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+            $user_id = $user->id;
+            $user_name = $user->name;
             $token = $user->createToken('app-token')->plainTextToken;
-            // session(['app-token' => $token]);
-            return response()->json(['token' => $token], 200);
+            return response()->json(['token' => $token , 'user_name' => $user_name, 'user_id' => $user_id], 200);
+
         }
+
         return response()->json(['message' => 'Unauthorized'], 401);
     }
     /**
