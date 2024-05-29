@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     const user_id = localStorage.getItem('user-id');
     const penulis_filter = user_id;  
-    alert(user_id);
     const status_filter = "reject";  
 
     const rows = document.querySelectorAll('tbody[penulis][status]');

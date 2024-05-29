@@ -87,6 +87,7 @@
     </form>
     @include('components.footer')
     <script>
+        
         function submitForm(action) {
             const form = document.getElementById('editor-form');
             const methodInput = document.getElementById('form-method');
@@ -99,11 +100,16 @@
             }
             form.submit(); 
         }
-
+        document.addEventListener("DOMContentLoaded", function() {
+            const user_id = localStorage.getItem('user-id');
+            if (user_id != "1") {
+                document.getElementById('status-group').style.display = 'none';
+            }
+        });
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="{{ url('/js/auth.js') }}"></script>
-    <script src="{{ url('/js/edit.js') }}"></script>
+    {{-- <script src="{{ url('/js/edit.js') }}"></script> --}}
 </body>
 </html>

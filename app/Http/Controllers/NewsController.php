@@ -37,7 +37,14 @@ class NewsController extends Controller
     {
         
         $recents = Berita::latest()->take(4)->get();
-    
+        
+        $selected = berita::find($id);
+
+        if ($selected->status =='reject') {
+            return redirect()->route('headline.show');
+   
+        }
+
         return view('news', [
             'news' => berita::find($id),
             'recent1' => $recents->get(0),
