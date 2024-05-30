@@ -13,6 +13,11 @@
     margin-top: 70px;
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
+    overflow-wrap: break-word;  
+}
+
+.isi-paragraf{
+  overflow-wrap: break-word;
 }
   :root {
     --blue: #5e50f9;

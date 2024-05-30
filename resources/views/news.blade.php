@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>World Vision</title>
+    <title>NEWSIGHT</title>
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="{{ url('/css/materialdesignicons.min.css') }}" />
     <link rel="stylesheet" href="{{ url('/css/aos.css') }}" />

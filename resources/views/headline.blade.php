@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>World Vision</title>
+    <title>NEWSIGHT</title>
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="{{ url('/css/materialdesignicons.min.css') }}" />
     <link rel="stylesheet" href="{{ url('/css/aos.css') }}" />
@@ -150,7 +150,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <div id="International" class="d-flex position-relative float-left">
-                  <h3 id = "International"class="section-title">International</h3>
+                  <h3 id = "International"class="section-title">Internasional</h3>
                 </div>
               </div>
             </div>
@@ -165,13 +165,10 @@
                   <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  Refugees flood Turkey's border with Greece
+                  {{$international1->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international1->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -186,13 +183,10 @@
                   <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  South Korea’s Moon Jae-in sworn in vowing address
+                  {{$international2->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international2->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -207,13 +201,10 @@
                   <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  These puppies are training to assist in avalanche rescue
+                  {{$international3->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international3->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -228,13 +219,10 @@
                   <span class="thumb-title">INTERNASIONAL</span>
                 </div>
                 <h5 class="font-weight-bold mt-3">
-                  'Love Is Blind' couple opens up about their first year
+                  {{$international4->judul_berita}}
                 </h5>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text
-                </p>
                 <a
-                  href=""
+                  href="{{ route('news.show', ['id' => $international4->id]) }}"
                   class="font-weight-bold text-dark pt-2"
                   >Read Article</a
                 >
@@ -260,13 +248,8 @@
                   <span class="thumb-title">SPORT</span>
                 </div>
                 <h1 class="font-weight-600 mt-3">
-                  Melania Trump speaks about courage at State Department
+                  <a href="{{ route('news.show', ['id' => $sport1->id]) }}">{{$sport1->judul_berita}}</a>
                 </h1>
-                <p class="fs-15 font-weight-normal">
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and
-                </p>
               </div>
               <div class="col-lg-6 mb-5 mb-sm-2">
                 <div class="row">
@@ -280,11 +263,8 @@
                       <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      A look at California's eerie plane graveyards
+                      <a href="{{ route('news.show', ['id' => $sport2->id]) }}">{{$sport2->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                   <div class="col-sm-6 mb-5 mb-sm-2">
                     <div class="position-relative image-hover">
@@ -296,11 +276,8 @@
                       <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      The world's most beautiful racecourses
+                      <a href="{{ route('news.show', ['id' => $sport3->id]) }}">{{$sport3->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                 </div>
                 <div class="row mt-3">
@@ -314,11 +291,8 @@
                       <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Japan cancels cherry blossom festivals over virus fears
+                      <a href="{{ route('news.show', ['id' => $sport4->id]) }}">{{$sport4->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                   <div class="col-sm-6">
                     <div class="position-relative image-hover">
@@ -330,11 +304,8 @@
                       <span class="thumb-title">SPORT</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Classic cars reborn as electric vehicles
+                      <a href="{{ route('news.show', ['id' => $sport5->id]) }}">{{$sport5->judul_berita}}</a>
                     </h5>
-                    <p class="fs-15 font-weight-normal">
-                      Lorem Ipsum has been the industry's standard dummy text
-                    </p>
                   </div>
                 </div>
               </div>
@@ -358,10 +329,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent1->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      The island country that gave Mayor Pete his name
+                      <a href="{{ route('news.show', ['id' => $additionalRecent1->id]) }}">{{$additionalRecent1->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -371,10 +342,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent2->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Disney parks expand (good) vegan food options
+                      <a href="{{ route('news.show', ['id' => $additionalRecent2->id]) }}">{{$additionalRecent2->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -384,10 +355,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent3->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      A hot springs where clothing is optional after dark
+                      <a href="{{ route('news.show', ['id' => $additionalRecent3->id]) }}">{{$additionalRecent3->judul_berita}}</a>
                     </h5>
                   </div>
                 </div>
@@ -399,10 +370,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent4->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      Japanese chef carves food into incredible pieces of art
+                      <a href="{{ route('news.show', ['id' => $additionalRecent4->id]) }}">{{$additionalRecent4->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -412,10 +383,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent5->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      The Misanthrope Society: A Taipei bar for people who
+                      <a href="{{ route('news.show', ['id' => $additionalRecent5->id]) }}">{{$additionalRecent5->judul_berita}}</a>
                     </h5>
                   </div>
                   <div class="col-sm-4 mb-5 mb-sm-2">
@@ -425,10 +396,10 @@
                         class="img-fluid"
                         alt="world-news"
                       />
-                      <span class="thumb-title">NEWS</span>
+                      <span class="thumb-title">{{$additionalRecent6->jenis_berita}}</span>
                     </div>
                     <h5 class="font-weight-600 mt-3">
-                      From Pakistan to the Caribbean: Curry's journey
+                      <a href="{{ route('news.show', ['id' => $additionalRecent6->id]) }}">{{$additionalRecent6->judul_berita}}</a>
                     </h5>
                   </div>
                 </div>

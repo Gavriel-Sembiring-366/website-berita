@@ -41,6 +41,11 @@ class LoginController extends Controller
 
         return response()->json(['message' => 'Unauthorized'], 401);
     }
+
+    public function logout(Request $request)
+    {
+        return view('logout');
+    }
     /**
      * Display the specified resource.
      *

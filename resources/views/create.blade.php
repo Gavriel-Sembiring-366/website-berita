@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Berita</title>
+    <title>NEWSIGHT - Create</title>
     <link rel="stylesheet" href="{{ url('/css/create.css') }}" />
 </head>
 <body>

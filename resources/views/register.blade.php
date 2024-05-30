@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
+  <title>NEWSIGHT - Register</title>
   @vite('public/css/tailwind.css')
 </head>
 <body>
@@ -63,7 +63,6 @@
 
   @include('components.footer')
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  {{-- <script src="{{ url('/js/register.js') }}"></script> --}}
-  {{-- <script src="{{ url('/js/navbar.js') }}"></script> --}}
+
 </body>
 </html>

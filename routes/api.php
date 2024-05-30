@@ -11,6 +11,7 @@ use App\Http\Controllers\EditController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchController;
 
 //TEST ONLY
 Route::get('/test', [HeadlineController::class, 'test'])->name('test.show');  
@@ -20,16 +21,20 @@ Route::get('/test', [HeadlineController::class, 'test'])->name('test.show');
 Route::get('/', [HeadlineController::class, 'welcome'])->name('headline.show');  
 
 
-
-
 // Route for individual news
 Route::get('news/{id}', [NewsController::class, 'show'])->name('news.show'); 
+
+Route::get('search', [SearchController::class, 'index'])->name('search.show'); 
+Route::post('search', [SearchController::class, 'store'])->name('search.run'); 
  
 
 
 //Route For Login
 Route::get('login', [LoginController::class, 'index'])->name('login.show');
 Route::post('login', [LoginController::class, 'store'])->name('login.run');
+
+
+Route::get('logout', [LoginController::class, 'logout'])->name('logout.run');
 
 
 //Route For Register

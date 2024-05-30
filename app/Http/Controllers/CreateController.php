@@ -56,7 +56,7 @@ class CreateController extends Controller
 
         $berita = Berita::create($validated);
         return response()->json(['message' => "Berita Sudah Ditambahkan!"]);
-        // return redirect()->route('create.show');
+       
     }
 
     /**

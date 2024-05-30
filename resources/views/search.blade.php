@@ -8,11 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+           text-align: center;
             margin: 0;
-            padding: 20px;
         }
         .search-container {
             background: white;
@@ -21,8 +18,9 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             margin-bottom: 20px;
-            width: 100%;
-            max-width: 600px;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 50px;
         }
         input[type="text"] {
             width: 80%;
@@ -32,19 +30,15 @@
             border-radius: 4px;
         }
         button {
-            padding: 10px 20px;
+            padding: 20px 20px;
             border: none;
-            background-color: #5cb85c;
-            color: white;
             border-radius: 4px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #4cae4c;
-        }
+
         table {
-            width: 100%;
-            max-width: 600px;
+            width: 80%;
+            margin-left: 10%;
             border-collapse: collapse;
             margin-top: 20px;
         }
@@ -59,11 +53,11 @@
     </style>
 </head>
 <body>
-
+@include('components.guest-navbar')
 <div class="search-container">
-    <h1>Search Page</h1>
-    <form action="/search" method="GET">
-        <input type="text" name="query" placeholder="Search...">
+    <h1>Search News</h1>
+    <form action="/search" method="POST" action="{{route('search.run')}}">
+        <input type="text" name="query" id="query" placeholder="Search...">
         <button type="submit">Search</button>
     </form>
 </div>
@@ -71,25 +65,18 @@
 <table>
     <thead>
         <tr>
-            <th>Suggested Queries</th>
+            <th>Hasil pencarian</th>
         </tr>
     </thead>
     <tbody>
+        @foreach ($results as $result)
         <tr>
-            <td>Weather forecast</td>
+            <td>
+            <a href="{{ route('news.show', ['id' => $result->id]) }}">{{$result->judul_berita}}</a>
+            </td>
         </tr>
-        <tr>
-            <td>News today</td>
-        </tr>
-        <tr>
-            <td>Best restaurants nearby</td>
-        </tr>
-        <tr>
-            <td>Movie showtimes</td>
-        </tr>
-        <tr>
-            <td>Latest tech news</td>
-        </tr>
+        @endforeach
+
     </tbody>
 </table>
 

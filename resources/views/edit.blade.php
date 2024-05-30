@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Berita</title>
+    <title>NEWSIGHT - Edit</title>
     @vite('public/css/edit.css')
 </head>
 <body>
@@ -74,8 +74,10 @@
         <div class="form-group" id="status-group">
             <label for="status">Jenis Berita</label>
             <select id="status" name="status">
-                <option value="reject">Reject</option>
-                <option value="accept">Accept</option>
+                <option value="reject"                             
+                {{ 'reject' === $selectedNews->status ? 'selected' : '' }}>Reject</option>
+                <option value="accept" 
+                {{ 'accept' === $selectedNews->status ? 'selected' : '' }}>Accept</option>
             </select>
         </div>
 

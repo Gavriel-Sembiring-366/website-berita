@@ -25,9 +25,13 @@
         <a href="{{ url('/#latest') }} " class=" text-sm font-semibold leading-6 text-gray-300">Latest News</a>
         <a href="{{ url('/#International') }}" class="text-sm font-semibold leading-6 text-gray-300">International</a>
         <a href="{{ url('/#sport') }}" class="text-sm font-semibold leading-6 text-gray-300">Sports</a>
+
+        <a href="{{ route('search.show') }}" class="text-sm font-semibold leading-6 text-gray-300">Search</a>
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="{{ route('dashboard.show') }}" class="text-sm font-semibold leading-6 text-gray-300">Dashboard<span aria-hidden="true">&rarr;</span></a>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end ">
+        <a  href="{{ route('dashboard.show') }}" class="text-sm font-semibold leading-6 text-gray-300 mr-10">Dashboard<span aria-hidden="true">&rarr;</span></a>
+
+        <a href="{{ route('logout.run') }}" class="text-sm font-semibold leading-6 text-gray-300">Logout<span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -53,6 +57,8 @@
               <a href="{{ url('/#latest') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Latest News</a>
               <a href="{{ url('/#International') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">International</a>
               <a href="{{ url('/#sport') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Sports</a>
+
+              <a href="{{ route('search.show') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Search</a>
             </div>
             <div class="py-6">
               <a href="{{ route('dashboard.show') }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Dashboard</a>

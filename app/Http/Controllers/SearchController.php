@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\berita;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 
-class NewsController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,12 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $results = Berita::latest()->where('status', 'accept')->take(5)->get();
+
+        return view('search', 
+        ['news' => Berita::all()],
+        compact('results')
+        );
     }
 
     /**
@@ -24,7 +29,18 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $nama = $request->input('query');
+
+
+        $results = Berita::where('status', 'accept')
+            ->where('judul_berita', 'like', '%' . $nama . '%')
+            ->latest()
+            ->take(5)
+            ->get();
+
+        return view('search', compact('results'));
+        
     }
 
     /**
@@ -35,22 +51,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        
-        $recents = Berita::latest()->take(4)->get();
-        
-        $selected = berita::find($id);
-
-        if ($selected->status =='reject' or $selected->status =='') {
-            return redirect()->route('headline.show');
-        }
-
-        return view('news', [
-            'news' => berita::find($id),
-            'recent1' => $recents->get(0),
-            'recent2' => $recents->get(1),
-            'recent3' => $recents->get(2),
-            'recent4' => $recents->get(3),
-        ]);
+        //
     }
 
     /**
