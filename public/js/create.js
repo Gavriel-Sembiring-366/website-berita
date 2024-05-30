@@ -18,7 +18,7 @@ document.getElementById('create-form').addEventListener('submit', function(event
     const judul3 = document.getElementById('judul3').value;
     const isi3 = document.getElementById('isi3').value;
     const author_id = document.getElementById('user_id').value;
-    const status = "";
+    const status = "reject";
 
     axios.post('/create', {
         judul_berita: judul_berita,
@@ -30,7 +30,7 @@ document.getElementById('create-form').addEventListener('submit', function(event
         judul3: judul3,
         isi3: isi3,
         user_id: author_id,
-        status:status
+        status:status,
     })
     .then(response => {
         alert(response.data.message);
